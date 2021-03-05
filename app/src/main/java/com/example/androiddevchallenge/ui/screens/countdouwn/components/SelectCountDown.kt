@@ -44,7 +44,6 @@ fun SelectCountDown(result: (String, String) -> Unit) {
                 result(it, seconds)
             }
         )
-
         OutlinedTextField(
             value = seconds,
             modifier = Modifier
@@ -54,7 +53,7 @@ fun SelectCountDown(result: (String, String) -> Unit) {
             label = { Text(text = "Seconds") },
             onValueChange = {
                 etSeconds(it)
-                result(etMinutes.toString(), etSeconds.toString())
+                result(minutes, it)
             }
         )
     }
